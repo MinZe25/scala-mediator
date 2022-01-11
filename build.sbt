@@ -8,9 +8,9 @@ crossScalaVersions := Seq(scala213)
 lazy val root = (project in file("."))
   .settings(
     name := "scala-mediator",
-    idePackagePrefix := Some("minze25.scalamediator")
+    idePackagePrefix := Some("io.github.minze25.scalamediator")
   )
 libraryDependencies += "org.reflections" % "reflections" % "0.10.2"
 libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 libraryDependencies += "net.codingwell" %% "scala-guice" % "5.0.2"
-
+publishTo := sonatypePublishToBundle.value

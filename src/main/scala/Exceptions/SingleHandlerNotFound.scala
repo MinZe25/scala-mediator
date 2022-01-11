@@ -1,4 +1,4 @@
-package minze25.scalamediator
+package io.github.minze25.scalamediator
 package Exceptions
 
 import core.SingleCommand

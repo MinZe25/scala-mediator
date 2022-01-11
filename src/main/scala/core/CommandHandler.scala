@@ -1,4 +1,4 @@
-package minze25.scalamediator
+package io.github.minze25.scalamediator
 package core
 
 import scala.reflect.runtime.universe
