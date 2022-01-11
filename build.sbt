@@ -4,6 +4,8 @@ lazy val scala211 = "2.11.12"
 
 ThisBuild / version := "0.5.0"
 ThisBuild / scalaVersion := scala213
+ThisBuild / sonatypeCredentialHost := "s01.oss.sonatype.org"
+
 crossScalaVersions := Seq(scala213)
 lazy val root = (project in file("."))
   .settings(
