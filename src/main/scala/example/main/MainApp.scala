@@ -34,8 +34,8 @@ object MainAppModulesCombine extends App {
 
   class ModuleCombiner extends ScalaModule {
     override def configure(): Unit = {
-      install(new ClassScannerModule("minze25.scalamediator.example.app.handlers"))
-      install(new ClassScannerModule("minze25.scalamediator.example.handlers"))
+      install(new ClassScannerModule("io.github.minze25.scalamediator.example.app.handlers"))
+      install(new ClassScannerModule("io.github.minze25.scalamediator.example.handlers"))
       install(new MediatorModule)
     }
   }
