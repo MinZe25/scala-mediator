@@ -1,10 +1,11 @@
 package io.github.minze25.scalamediator
 package core
 
-import com.google.inject.Inject
+import com.google.inject.{Inject, Singleton}
 
 import scala.reflect.runtime.universe._
 
+@Singleton
 class HandlerService @Inject()
 (singleHandlers: Set[SingleCommandHandler[SingleCommand[Any], Any]],
  multiHandlers: Set[MultiCommandHandler[MultiCommand]])
