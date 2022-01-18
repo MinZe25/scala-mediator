@@ -3,8 +3,9 @@ package modules
 
 import core.{HandlerService, IHandlerService, IMediator, MultiCommand, SingleCommand}
 
-import com.google.inject.Inject
+import com.google.inject.{Inject, Singleton}
 import Exceptions.SingleHandlerNotFound
+
 import net.codingwell.scalaguice.ScalaModule
 
 import scala.reflect.runtime.universe._
@@ -12,10 +13,11 @@ import scala.reflect.runtime.universe._
 class MediatorModule extends ScalaModule {
   override def configure(): Unit = {
     bind[IHandlerService].to[HandlerService]
-    bind[IMediator].to[Mediator].asEagerSingleton()
+    bind[IMediator].to[Mediator]
   }
 }
 
+@Singleton
 private sealed class Mediator @Inject()(handlerService: IHandlerService) extends IMediator {
   override def publish(command: MultiCommand): Unit = handlerService
     .getMultipleCommandHandlers(command).foreach(_.handle(command))
